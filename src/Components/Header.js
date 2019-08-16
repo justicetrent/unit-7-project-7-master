@@ -1,5 +1,5 @@
 //imports for React and react-router-dom
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Nav from './Nav'
 //import { NavLink } from 'react-router-dom';
 //import Route from 'react-router-dom'
@@ -7,7 +7,7 @@ import Nav from './Nav'
 
 
 //imports for components 
-import Searchform from './Searchform';
+import Searchform from './Searchform'
 
 
 class Header extends Component {
@@ -30,4 +30,4 @@ class Header extends Component {
 //     </BrowserRouter>
 // }
 
-export default Header;
+export default Header

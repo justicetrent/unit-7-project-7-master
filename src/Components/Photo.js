@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
-import Photolist from './Photoitem';
+import React from 'react';
 
-class Photo extends Component {
-    render() {
-        
-    }
+const Photo = (props) => {
+    
+        return (
+            <li>
+                <img src={props.url} alt={props.title} />
+            </li>
+        )
+    
 }
+
+export default Photo
