@@ -1,10 +1,26 @@
-// import React from 'react';
-// import SearchForm from './Components./SearchForm';
-// import Nav from './Components/Nav';
+//imports for React and react-router-dom
+import React, { Component } from 'react';
+import Nav from './Nav'
+//import { NavLink } from 'react-router-dom';
+//import Route from 'react-router-dom'
+//import { withRouter } from 'react-router-dom'
 
 
-// const Header = (props) => {
-//     <BrowserRouter>
+//imports for components 
+import Searchform from './Searchform';
+
+
+class Header extends Component {
+  
+    render() {
+        return(
+        <header>
+            <Searchform onSearch={this.props.onSearch} />
+            <Nav />
+        </header>
+        )
+    }
+}
 //         const { locations } = props
 //         return (
 //             <Header />
@@ -14,4 +30,4 @@
 //     </BrowserRouter>
 // }
 
-// export default Header;
+export default Header;

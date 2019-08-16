@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter } from 'react-router-dom';
 
 
 
 
 
- import apiKey from './config.js'
+ //import apiKey from './config.js'
+ import Header from './Components/Header.js'
 
 //  import Nav from './Components./Nav.js';
 // import NotFound from './Components./NotFound.js';
@@ -48,10 +49,12 @@ class App extends Component {
     render () {
         return(
             <BrowserRouter>
-                <div>
-                    Topic1={this.state.Topic1}
-                    Topic2={this.state.Topic2}
-                    Topic3={this.state.Topic3}
+                <div className='container'>
+                    <Header
+                        Topic1={this.state.Topic1}
+                        Topic2={this.state.Topic2}
+                        Topic3={this.state.Topic3}
+                    />
                 </div>
             </BrowserRouter>
         )

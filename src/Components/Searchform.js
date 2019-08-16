@@ -1,34 +1,39 @@
-// import React, { Component } from 'react';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
-// export default class SearchForm extends Component {
-  
-//     state = {
-//       searchText: 'Topic1', 'Topic2', 'Topic3'
-//     }
-    
-//     onSearchChange = e => {
-//       this.setState({ searchText: e.target.value });
-//     }
-    
-//     handleSubmit = e => {
-//       e.preventDefault();
-//       this.props.onSearch(this.query.value);
-//       e.currentTarget.reset();
-//     }
-    
-//     render() {  
-//       return (
-//         <form className="search-form" onSubmit={this.handleSubmit} >
-//           <label className="is-hidden" htmlFor="search">Search</label>
-//           <input type="search" 
-//                  onChange={this.onSearchChange}
-//                  name="search" 
-//                  ref={(input) => this.query = input}
-//                  placeholder="Search..." />
-//           <button type="submit" id="submit" className="search-button"><i className="material-icons icn-search">search</i></button>
-//         </form>      
-//       );
-//     }
-//   }
 
+
+ class Searchform extends Component {
   
+    state = {
+      searchValue: ''
+    };
+   
+    onSearchChange = e => {
+      this.setState({ searchValue: e.target.value });
+    };
+    
+    handleSubmit = e => {
+      e.preventDefault();
+      this.props.onSearch(this.state.searchValue);
+      this.props.history.push(`/search/${this.searchTag.value}`);
+      e.currentTarget.reset();
+    };
+
+    render() {
+
+        return (
+        <form className="search-form" onSubmit={this.handleSubmit}>;
+          <input type="search"
+                 onChange={this.onSearchChange}
+                 name="search" 
+                 ref={(input) => this.searchTag = input}
+                 placeholder="Search"
+            />;
+          <button type="submit" className="search-button"></button>;
+        </form>
+        )
+       
+    }
+}
+export default withRouter(Searchform);
