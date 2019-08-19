@@ -15,8 +15,7 @@ import { withRouter } from 'react-router-dom'
     
     handleSubmit = e => {
       e.preventDefault()
-      this.props.onSearch(this.query.value)
-      this.props.history.push(`/search/${this.searchTag.value}`)
+      this.props.history.push(`/title/${this.query.value}`)
       e.currentTarget.reset();
     }
 
